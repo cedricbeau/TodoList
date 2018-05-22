@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Todo List</title>
+
+  <!-- Critical Styles -->
+  <style>/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}</style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <svg  style="position: absolute; width: 0; height: 0; overflow: hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <symbol id="icon-heart" viewBox="0 0 32 32">
+        <title>heart</title>
+        <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
+      </symbol>
+    </defs>
+  </svg>    
+  <!-- .SVG -->
+  
+  <!-- Consignes -->
+  <div class="consignes">
+    <h3>Consignes</h3>
+    <ol>
+      <li>Remplir le champ vide</li>
+      <li>Cliquer sur le bouton 'Ajouter' ou appuyer sur la touche 'Entrée' pour ajouter la tâche</li>
+      <li>Cocher la case à gauche du nom de la tâche pour la valider</li>
+      <li>Cliquer sur la croix à droite du nom de la tâche pour la supprimer</li>
+    </ol>
+    <button type="button" class="btn btn-consignes">Consignes</button>
+  </div>  
+  <!-- Content -->
+  <div class="content">
+
+    <a href="https://github.com/cedricbeau/TodoList"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+
+    <div class="content__Header">
+      <h1>Todo List</h1>      
+    </div>
+    
+    <div class="content__body">
+      <ul id="todoList">
+        <li class="list__item" id="demoTask">
+          <input type="checkbox" class="check__task"> 
+          <div class="item__task">Faire une todo list</div>          
+          <button type="button" class="remove__task">x</button>
+        </li>
+      </ul>
+      <div id="addListItem">
+        <label for="inputTask">Ajouter une tâche</label>
+        <input type="text" id="inputTask" placeholder="Ajouter une tâche...">
+        <button type="reset" id="resetTodoList" class="btn">Reset</button>
+        <button type="submit" id="addTask" class="btn">Ajouter</button>
+        
+      </div>
+    </div>
+    
+    <footer>
+      <script>
+      document.write(new Date().getFullYear());
+      </script>
+     - Fait avec <svg class="icon icon-heart"><use xlink:href="#icon-heart"></use></svg> par <a href="https://cedricbeau.pro/" title="cedricbeau.pro">Cédric Beau</a>  
+    </footer>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
