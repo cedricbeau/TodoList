@@ -1,2 +1,2 @@
 # TodoList
-Simple todo
+Simple Todo List
