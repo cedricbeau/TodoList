@@ -135,7 +135,7 @@ h1 {
   position: relative;  
   display: flex;
   align-items: center;
-  padding-left: 1em;
+  padding-left: 2em;
   color: var(--color--info);
   background-color: rgba(255,255,255, .8);  
   border-radius: 2px;
@@ -147,16 +147,38 @@ h1 {
   margin-top: .3125em; 
 }
 
+.check__task {
+  display: none;
+}
+
 .item__task {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: calc(100% - 40px);
   padding: 1em;
-  margin-left: 1em;
   border-left: 1px solid var(--color--info);
+  cursor: pointer;
+}
+
+.item__task::before {
+  content: '';
+  position: absolute;
+  left: -1.45em;
+  width: .8em;
+  height: .8em;
+  border: 2px solid currentColor;
+  border-radius: .4em;
 }
 
 .check__task:checked + .item__task {
   color: var(--color--success);
   text-decoration: line-through;
   border-color: var(--color--success);
+}
+
+.check__task:checked + .item__task::before {
+  border-width: 5px;
 }
 
 .remove__task {
@@ -255,6 +277,39 @@ h1 {
 
 #resetTodoList:active {
   box-shadow: 0 0 4px rgba(00,00,00,0.35);
+}
+
+/* ---------- Alert ---------- */
+
+.alert {
+  position: relative;
+  padding: 1em;
+  margin-top: -.5em;
+  margin-bottom: 1em;
+  font-size: .75em;  
+  border-radius: .25rem;
+}
+
+.alert-danger {
+  display: none;
+  color: var(--btn--color);
+  border: 1px solid var(--btn--backgroundColor);  
+}
+
+.close-alert {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1em;
+  padding: 0;
+  margin: 0;
+  color: currentColor;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 /* ---------- Footer ---------- */

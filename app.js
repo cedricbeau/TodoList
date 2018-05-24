@@ -4,6 +4,7 @@ toggleConsigne()
 addItem()
 removeTask()
 resetTodo()
+closeAlert()
 
 //Consignes
 function toggleConsigne(){
@@ -50,8 +51,8 @@ function addItem(){
     inputCheck.setAttribute('type', 'checkbox')
     inputCheck.classList.add('check__task')    
 
-    // TASK NAME
-    itemTask = document.createElement('div')
+    // LABEL
+    itemTask = document.createElement('label')
     itemTask.classList.add('item__task')
     itemTask.innerText = inputTask.value
 
@@ -68,18 +69,27 @@ function addItem(){
     newListItem.appendChild(inputCheck)  
     newListItem.appendChild(itemTask)
     newListItem.appendChild(btnRemove)
+
+    
+    
     
     // Alerte si champ vide
+    let alertBox = document.querySelector('.alert-danger')
+    // Supprime l'alerte si existe au moment de l'ajout de la nouvelle tâche
+    alertBox.style.display = 'none'
     if(inputTask.value === '') {
-      alert('Veuillez ajouter une tâche.')
-      let alertBox = document.querySelector('.alert-box')
       alertBox.style.display = 'block'
     } else {
       todoList.appendChild(newListItem)
     }
 
+    // Associate checkbox and label
+    forId()
+
     // Vide le champ une fois la tâche ajoutée
-    inputTask.value = ''    
+    inputTask.value = ''
+
+    
 
   }
 
@@ -93,6 +103,27 @@ function addItem(){
   // Ajoute une tache en cliquant sur le boutton 'Ajouter'
   addTask.addEventListener('click', createTask, false)
   
+}
+
+// Associate checkbox and label
+function forId() {
+  
+  let taskInputs = document.querySelectorAll('.check__task')
+  let taskLabels = document.querySelectorAll('.item__task')
+
+  for(let i = 0; i<taskInputs.length; i++){    
+    let taskInput = taskInputs[i]    
+    let newId = 'task'+i
+    taskInput.setAttribute('id', newId)    
+  }
+
+  for(let i = 0; i<taskLabels.length; i++){    
+    let taskLabel = taskLabels[i]
+    console.log(taskLabel)
+    let newId = 'task'+i
+    taskLabel.setAttribute('for', newId)    
+  }  
+
 }
 
 //removeItem
@@ -123,6 +154,14 @@ function resetTodo() {
   }
   resetBtn.addEventListener('click', resetTodoList, false)
 
+}
+
+// Close alert
+function closeAlert(){
+  let closeAlertBtn = document.querySelector('.close-alert')
+  closeAlertBtn.addEventListener('click', function(){
+    this.parentNode.style.display = 'none'
+  })
 }
 
 

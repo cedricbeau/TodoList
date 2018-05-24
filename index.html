@@ -28,7 +28,7 @@
     <ol>
       <li>Remplir le champ vide</li>
       <li>Cliquer sur le bouton 'Ajouter' ou appuyer sur la touche 'Entrée' pour ajouter la tâche</li>
-      <li>Cocher la case à gauche du nom de la tâche pour la valider</li>
+      <li>Cocher la case à gauche ou cliquer sur le nom de la tâche pour la valider</li>
       <li>Cliquer sur la croix à droite du nom de la tâche pour la supprimer</li>
       <li>Et voilà...</li>
     </ol>
@@ -45,15 +45,12 @@
     
     <div class="content__body">
       <ul id="todoList">
-        <li class="list__item" id="demoTask">
-          <input type="checkbox" class="check__task"> 
-          <div class="item__task">Faire une todo list</div>          
-          <button type="button" class="remove__task">x</button>
-        </li>
+        <li class="list__item" id="demoTask"><input type="checkbox" class="check__task" id="task0"><label for="task0" class="item__task">Faire une todo list</label><button type="button" class="remove__task">x</button></li>
       </ul>
       <div id="addListItem">
         <label for="inputTask">Ajouter une tâche</label>
         <input type="text" id="inputTask" placeholder="Ajouter une tâche...">
+        <div class="alert alert-danger">Veuillez ajouter une tâche svp. <button class="close-alert" type="button">X</button></div>
         <button type="reset" id="resetTodoList" class="btn">Reset</button>
         <button type="submit" id="addTask" class="btn">Ajouter</button>
         
