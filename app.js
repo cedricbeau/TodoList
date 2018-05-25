@@ -17,14 +17,14 @@ function toggleConsigne(){
     el3.classList.toggle('is-down')
   }
 
-  function toggleConsigne(){
+  function toggleEls(){
     let consigne = document.querySelector('.consignes')
     let content = document.querySelector('.content')
     let btn = document.querySelector('.btn-consignes')
     toggleClass(consigne, content, btn)
   }
   
-  btn.addEventListener('click', toggleConsigne, false)  
+  btn.addEventListener('click', toggleEls, false)  
 
 }
 
