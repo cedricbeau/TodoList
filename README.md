@@ -1,6 +1,6 @@
 # TodoList
 
-Simple Todo List sans stockage des données
+Simple Todo List
 
 ## Demo
 
