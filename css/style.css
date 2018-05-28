@@ -135,8 +135,7 @@ h1 {
   position: relative;  
   display: flex;
   align-items: center;
-  padding-left: 2em;
-  color: var(--color--info);
+  padding-left: 60px;  
   background-color: rgba(255,255,255, .8);  
   border-radius: 2px;
   box-shadow: 2px 2px 4px rgba(00,00,00,0.05);
@@ -155,20 +154,23 @@ h1 {
   position: relative;
   display: flex;
   align-items: center;
-  width: calc(100% - 40px);
+  width: calc(100% - 60px);
   padding: 1em;
+  color: var(--color--info);
   border-left: 1px solid var(--color--info);
   cursor: pointer;
+  transition: color .4s;
 }
 
-.item__task::before {
-  content: '';
-  position: absolute;
-  left: -1.45em;
-  width: .8em;
-  height: .8em;
-  border: 2px solid currentColor;
-  border-radius: .4em;
+.item__task svg {
+	display: inline-block;
+	position: absolute;
+	left: -42px;
+  width: 1.125em;
+  height: 1.125em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
 .check__task:checked + .item__task {
@@ -177,34 +179,39 @@ h1 {
   border-color: var(--color--success);
 }
 
-.check__task:checked + .item__task::before {
-  border-width: 5px;
-}
-
 .remove__task {
   position: absolute;  
   top: 0;
   bottom: 0;
   right: 0;
-  width: 40px;
-  color: #fff;
-  background-color: var(--color--info);
+  width: 60px;
+  color: var(--btn--backgroundColor--hover);
+  background-color: transparent;
   border: none;
+  border-left: 1px solid currentcolor;
   cursor: pointer;
-  transition: background-color .4s;
+  opacity: .6;
+  transition: color .4s;
 }
 
 .remove__task:hover {
-  background-color: var(--color--info--hover);
+  color: var(--color--danger);
 }
 
-.check__task:checked + .item__task + .remove__task {
-  background-color: var(--color--success);
+.remove__task svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 
-.check__task:checked + .item__task + .remove__task:hover {
-  background-color: var(--color--success--hover);
+.remove__task:hover svg {
+	stroke: currentColor;
+	fill: currentColor;
 }
+
 
 /* Add List Item */
 #addListItem {
@@ -296,7 +303,7 @@ h1 {
   border: 1px solid var(--btn--backgroundColor);  
 }
 
-.close-alert {
+#closeAlert {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
