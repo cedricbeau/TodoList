@@ -1,9 +1,9 @@
 :root {
-  --color--success: #8BC34A;
-  --color--success--hover: #558B2F;
+  --color--success: #81C784;
+  --color--success--hover: #4CAF50;
   --color--danger: #f44336;
-  --color--info: #00BCD4;
-  --color--info--hover: #00838F;
+  --color--info: #64B5F6;
+  --color--info--hover: #2196F3;
   --color--disabled: #B0BEC5;
 
   --btn--color: #BF360C;
@@ -162,6 +162,10 @@ h1 {
   transition: color .4s;
 }
 
+.item__task:hover {
+	color: var(--color--info--hover);
+}
+
 .item__task svg {
 	display: inline-block;
 	position: absolute;
@@ -185,17 +189,16 @@ h1 {
   bottom: 0;
   right: 0;
   width: 60px;
-  color: var(--btn--backgroundColor--hover);
+  color: var(--btn--backgroundColor);
   background-color: transparent;
   border: none;
   border-left: 1px solid currentcolor;
   cursor: pointer;
-  opacity: .6;
   transition: color .4s;
 }
 
 .remove__task:hover {
-  color: var(--color--danger);
+  color: var(--btn--backgroundColor--hover);
 }
 
 .remove__task svg {
