@@ -1,6 +1,6 @@
 # TodoList
 
-Simple Todo List
+Simple Todo List with localstorage
 
 ## Demo
 
