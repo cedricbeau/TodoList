@@ -194,7 +194,7 @@ function getValues() {
 
 function removeTask(){	
 	
-	// Supprime le localStorage lié à la checkbox
+  // Supprime le localStorage lié à la checkbox
 	if(this.previousSibling.previousSibling.checked === true) {		
 		let removeValue = this.previousSibling.previousSibling.id
 		localStorage.removeItem(removeValue)		
