@@ -9,12 +9,7 @@
   --btn--color: #BF360C;
   --btn--backgroundColor: #FFAB91;
   --btn--color--hover: #FBE9E7;
-  --btn--backgroundColor--hover: #FF7043;
-
-  --consignes--color: #ccc;
-  --consignes--backgroundColor: #141414;
-  --btn--consignes--backgroundColor: #333;
-  
+  --btn--backgroundColor--hover: #FF7043;  
 }
 /* Smart reset */
 *,*:before,*:after {
@@ -42,14 +37,6 @@ body {
 }
 
 /* Content */
-.content {
-  transition: transform .4s;
-}
-
-.content.is-down {
-  transform: translateY(400px);
-}
-
 .content__header {
   position: relative;
 }
