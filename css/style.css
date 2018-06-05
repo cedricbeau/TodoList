@@ -32,69 +32,13 @@ body {
   background-color: #f2f2f2;
 }
 
-/* Consigne */
-.consignes {
-  position: fixed;
-  z-index: 999;
-  right: 0;
-  left: 0;
-  transform: translateY(-400px);  
-  height: 400px;
-  padding: 1em;
-  color: var(--consignes--color);
-  background-color: var(--consignes--backgroundColor);
-  transition: transform .4s;
-}
-
-.consignes.is-down {  
-  transform: translateY(0); 
-}
-
-.consignes h3 {
-  margin-top: 0;
-}
-
-.consignes ol li + li {
-  margin-top: .625em;
-}
+/* btn */
 
 .btn{  
   display: inline-block;
   padding: .625em 1em .5em 1em;
   border: none;
   cursor: pointer;
-}
-
-.btn-consignes {
-  position: fixed;
-  top: 400px;
-  right: 0;
-  padding: .875em 2.875em .875em .875em;
-  color: var(--consignes--color);
-  background-color: var(--btn--consignes--backgroundColor);
-  border-bottom-left-radius: .25em;
-  transition: background-color .4s;
-}
-
-.btn-consignes:hover {
-  background-color: var(--consignes--backgroundColor);
-}
-
-.btn-consignes::before {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: block;
-  width: 3em;
-  height: 3em;
-  content: "\25BC";
-  line-height: 3;
-  text-align: center;
-  transition: transform .4s;
-}
-
-.btn-consignes.is-down::before {
-  transform: rotateX(180deg);
 }
 
 /* Content */
@@ -322,36 +266,3 @@ h1 {
   cursor: pointer;
 }
 
-/* ---------- Footer ---------- */
-
-footer {
-  margin: 2em 0;
-  font-size: .75em;
-  color: #78909C; 
-  text-align: center;
-}
-
-footer svg {
-  display: inline-block;
-  vertical-align: middle;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  -webkit-transition: fill .4s;
-  				transition: fill .4s;
-}
-
-footer a {
-  color: currentColor;
-  text-decoration: none; 
-  -webkit-transition: color .4s;
-  				transition: color .4s;
-}
-
-footer a:hover {
-  color: #03A9F4;
-}
-
-footer a:hover svg {
-	fill: #03A9F4;
-}
