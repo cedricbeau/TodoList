@@ -38,8 +38,8 @@ body {
   z-index: 999;
   right: 0;
   left: 0;
-  transform: translateY(-300px);  
-  height: 300px;
+  transform: translateY(-400px);  
+  height: 400px;
   padding: 1em;
   color: var(--consignes--color);
   background-color: var(--consignes--backgroundColor);
@@ -67,7 +67,7 @@ body {
 
 .btn-consignes {
   position: fixed;
-  top: 300px;
+  top: 400px;
   right: 0;
   padding: .875em 2.875em .875em .875em;
   color: var(--consignes--color);
@@ -103,7 +103,7 @@ body {
 }
 
 .content.is-down {
-  transform: translateY(300px);
+  transform: translateY(400px);
 }
 
 .content__header {
