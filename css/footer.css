@@ -1,11 +1,8 @@
 /* ---------- Footer ---------- */
 footer {
 	max-width: 30em;
-  padding-top: 2em;
-  margin-top: 5em !important;
-  margin-right: auto;
-  margin-bottom: 2em !important;
-  margin-left: auto;
+  padding-top: 2rem;
+  margin: 2rem auto; 
   font-size: 0.875em;
   text-align: center;
   color: #78909C; 

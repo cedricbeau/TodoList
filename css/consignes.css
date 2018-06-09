@@ -59,6 +59,7 @@
 	stroke-width: 0;
 	stroke: currentColor;
 	fill: currentColor;
+	will-change: transform;
   transition: transform .4s;
 }
 
@@ -68,6 +69,7 @@
 
 /* ---------- Content ---------- */
 .content {
+	will-change: transform;
   transition: transform .4s;
 }
 
