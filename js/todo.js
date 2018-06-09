@@ -24,7 +24,7 @@ removeTasks()
 
 function createTask(){
 	  
-  let newTask, checkTask, labelTask, btnRemoveTask
+	let newTask, checkTask, labelTask, btnRemoveTask
 	    
   // LI
   newTask = document.createElement('li')
@@ -60,28 +60,28 @@ function createTask(){
   if(inputTask.value === '') {
     alertBox.style.display = 'block'
   } else {
-    // sinon => ajoute tâche
+	  // sinon => ajoute tâche
     todoList.appendChild(newTask)
   }
   
   // Associe checkbox et label
   labelForInput()
   // Style reset btn
-  styleBtnReset()    
+	styleBtnReset()    
   // Stock la liste localement
   store()  
   // Stock l'état de la checkbox localement  
-  storeCheck()	
+	storeCheck()	
 	
-  // Vide le champ une fois la tâche ajoutée
+	// Vide le champ une fois la tâche ajoutée
   inputTask.value = ''
   
 }
 
 // Ajoute une tache en appuyant sur la touche 'Enter'
 inputTask.addEventListener('keydown', function(e){	
-  if(e.key === 'Enter') {
-    createTask()
+	if(e.key === 'Enter') {
+  	createTask()
   }  
 })
 
@@ -116,15 +116,15 @@ function labelForInput() {
 /* --------------- Add checkmark: Ready --------------- */
 
 function addCheckmark() {
-  let taskInputs = document.querySelectorAll('.check__task')
-    for(let i = 0; i<taskInputs.length; i++){		  
-      let taskInput = taskInputs[i]     
-      if(taskInput.checked === true) {
-        taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark"></use></svg>'+taskInput.nextSibling.innerText	    
-      } 
-      if(taskInput.checked === false) { 
-        taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark2"></use></svg>'+taskInput.nextSibling.innerText
-      }          
+	let taskInputs = document.querySelectorAll('.check__task')
+	for(let i = 0; i<taskInputs.length; i++){		  
+    let taskInput = taskInputs[i]     
+    if(taskInput.checked === true) {
+			taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark"></use></svg>'+taskInput.nextSibling.innerText	    
+	  } 
+	  if(taskInput.checked === false) {
+		  taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark2"></use></svg>'+taskInput.nextSibling.innerText
+		}          
   }
 }
 
@@ -135,19 +135,20 @@ function addCheckmark() {
 // Store checkbox values
 function storeCheck() {	
 		
-  let taskInputs = document.querySelectorAll('.check__task')	
-  for(let i = 0; i<taskInputs.length; i++){		  
+	let taskInputs = document.querySelectorAll('.check__task')	
+	
+	for(let i = 0; i<taskInputs.length; i++){		  
     let taskInput = taskInputs[i]      
     taskInput.addEventListener('click', function(){	    
-      if(taskInput.checked === true) {
-	console.log(taskInput.checked)		    
-	localStorage.setItem('task'+i, taskInput.checked)
-	taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark"></use></svg>'+taskInput.nextSibling.innerText	    
-      } else {
-	console.log(taskInput.checked)
-	localStorage.removeItem('task'+i, taskInput.checked)
-	taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark2"></use></svg>'+taskInput.nextSibling.innerText
-      }	    
+	    if(taskInput.checked === true) {
+		    console.log(taskInput.checked)		    
+		    localStorage.setItem('task'+i, taskInput.checked)
+		    taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark"></use></svg>'+taskInput.nextSibling.innerText	    
+	    } else {
+		    console.log(taskInput.checked)
+		    localStorage.removeItem('task'+i, taskInput.checked)
+		    taskInput.nextSibling.innerHTML = '<svg><use xlink:href="#icon-checkmark2"></use></svg>'+taskInput.nextSibling.innerText
+		  }	    
     }, false) 
           
   }
@@ -157,7 +158,7 @@ function storeCheck() {
 // Store List
 function store() {
 	
-  window.localStorage.myTodoList = todoList.innerHTML	
+	window.localStorage.myTodoList = todoList.innerHTML	
 		
 }
 
@@ -194,7 +195,7 @@ function getValues() {
 
 function removeTask(){	
 	
-  // Supprime le localStorage lié à la checkbox
+	// Supprime le localStorage lié à la checkbox
 	if(this.previousSibling.previousSibling.checked === true) {		
 		let removeValue = this.previousSibling.previousSibling.id
 		localStorage.removeItem(removeValue)		
