@@ -17,4 +17,4 @@ Simple Todo List with localstorage
 **22/06/2018**
 
 * Ajout des favicons
-* Ajout des services workers
+
