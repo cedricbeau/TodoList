@@ -12,7 +12,7 @@ Simple Todo List with localstorage
 
 ![Capture d'écran de TodoList]( https://github.com/cedricbeau/TodoList/blob/master/todo-03.png "Capture d'écran de TodoList")
 
-## Mises àjours
+## Mises à jours
 
 **22/06/2018**
 
