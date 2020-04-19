@@ -2,10 +2,10 @@
 footer {
 	max-width: 30em;
   padding-top: 2rem;
-  margin: 2rem auto; 
+  margin: 2rem auto;
   font-size: 0.875em;
   text-align: center;
-  color: #78909C; 
+  color: #78909C;
   border-top: 1px solid #e5e5e5;
 }
 
@@ -24,14 +24,8 @@ footer a:hover {
   color: #03A9F4;
 }
 
-footer svg {
-  display: inline-block;
+footer [class*="icon-"] {
   vertical-align: middle;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-  -webkit-transition: fill .4s;
-  transition: fill .4s;
 }
 
 @media only screen and (min-width: 768px) {

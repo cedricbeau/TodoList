@@ -4,8 +4,8 @@
   z-index: 1000;
   right: 0;
   left: 0;
-  transform: translateY(-400px);
-  height: 400px;
+  transform: translateY(-240px);
+  height: 240px;
   padding: 1em;
   color: #ccc;
   background-color: #141414;
@@ -36,8 +36,10 @@
 
 .btn-consignes {
   position: fixed;
-  top: 400px;
+  top: 240px;
   right: 0;
+  display: flex;
+  align-items: center;
   color: currentColor;
   background-color: #141414;
   border-radius: 0;
@@ -50,30 +52,21 @@
   background-color: #141414;
 }
 
-.btn-consignes svg {
-  display: inline-block;
-	vertical-align: middle;
-	width: 1em;
-	height: 1em;
-	margin-top: -4px;
-	stroke-width: 0;
-	stroke: currentColor;
-	fill: currentColor;
-	will-change: transform;
+.btn-consignes [class*="icon-"] {
+  will-change: transform;
   transition: transform .4s;
 }
 
-.btn-consignes.is-down svg {
-  transform: rotate(180deg);
+.btn-consignes.is-down [class*="icon-"] {
+  transform: scaleY(-1);
 }
 
 /* ---------- Content ---------- */
 .content {
-	will-change: transform;
+  will-change: transform;
   transition: transform .4s;
 }
 
 .content.is-down {
-  transform: translateY(400px);
+  transform: translateY(240px);
 }
-/*# sourceMappingURL=consignes.css.map */
