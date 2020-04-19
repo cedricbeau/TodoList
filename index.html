@@ -6,39 +6,21 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="description" content="Simple Todo List">
   <meta name="author" content="Cédric Beau">
-  <title>Todo List</title>	
+  <title>Todo List</title>
 
-	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-	<link rel="manifest" href="favicon/site.webmanifest">
-	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#4cb2d4">
-	<meta name="msapplication-TileColor" content="#4cb2d4">
-	<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+  <link rel="manifest" href="favicon/site.webmanifest">
+  <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#4cb2d4">
+  <meta name="msapplication-TileColor" content="#4cb2d4">
+  <meta name="theme-color" content="#ffffff">
 
   <!-- Critical Styles -->
   <style>/*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=checkbox],[type=radio],legend{box-sizing:border-box;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{padding:.35em .75em .625em}legend{color:inherit;display:table;max-width:100%;white-space:normal}textarea{overflow:auto}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}[hidden],template{display:none}</style>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <svg  style="position: absolute; width: 0; height: 0; overflow: hidden" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-      <symbol id="icon-heart" viewBox="0 0 32 32">
-        <title>heart</title>
-        <path d="M23.6 2c-3.363 0-6.258 2.736-7.599 5.594-1.342-2.858-4.237-5.594-7.601-5.594-4.637 0-8.4 3.764-8.4 8.401 0 9.433 9.516 11.906 16.001 21.232 6.13-9.268 15.999-12.1 15.999-21.232 0-4.637-3.763-8.401-8.4-8.401z"></path>
-      </symbol>
-      <symbol id="shape-code" viewBox="0 0 20 15"><title>code</title><path d="M13.197.39l-2.084 2.083 4.862 4.862-4.862 4.862 2.084 2.084 6.251-6.946-6.25-6.946zm-6.946 0L0 7.334l6.251 6.946 2.084-2.084-4.862-4.862 4.862-4.862L6.251.389z" fill-rule="nonzero"/></symbol>
-      <symbol id="icon-bin" viewBox="0 0 32 32"><title>bin</title><path d="M4 10v20c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-20h-22zM10 28h-2v-14h2v14zM14 28h-2v-14h2v14zM18 28h-2v-14h2v14zM22 28h-2v-14h2v14z"></path><path d="M26.5 4h-6.5v-2.5c0-0.825-0.675-1.5-1.5-1.5h-7c-0.825 0-1.5 0.675-1.5 1.5v2.5h-6.5c-0.825 0-1.5 0.675-1.5 1.5v2.5h26v-2.5c0-0.825-0.675-1.5-1.5-1.5zM18 4h-6v-1.975h6v1.975z"></path></symbol>
-			<symbol id="icon-checkmark2" viewBox="0 0 32 32"><title>checkmark2</title><path d="M12.42 28.678l-12.433-12.238 6.168-6.071 6.265 6.167 13.426-13.214 6.168 6.071-19.594 19.285zM3.372 16.441l9.048 8.905 16.208-15.953-2.782-2.739-13.426 13.214-6.265-6.167-2.782 2.739z"></path></symbol>
-			<symbol id="icon-checkmark" viewBox="0 0 32 32"><title>checkmark</title><path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path></symbol>
-			<symbol id="icon-arrow-down2" viewBox="0 0 32 32"><title>arrow-down2</title><path d="M27.414 19.414l-10 10c-0.781 0.781-2.047 0.781-2.828 0l-10-10c-0.781-0.781-0.781-2.047 0-2.828s2.047-0.781 2.828 0l6.586 6.586v-19.172c0-1.105 0.895-2 2-2s2 0.895 2 2v19.172l6.586-6.586c0.39-0.39 0.902-0.586 1.414-0.586s1.024 0.195 1.414 0.586c0.781 0.781 0.781 2.047 0 2.828z"></path></symbol>
-      <symbol id="icon-github" viewBox="0 0 32 32"><title>github</title><path d="M16 0.395c-8.836 0-16 7.163-16 16 0 7.069 4.585 13.067 10.942 15.182 0.8 0.148 1.094-0.347 1.094-0.77 0-0.381-0.015-1.642-0.022-2.979-4.452 0.968-5.391-1.888-5.391-1.888-0.728-1.849-1.776-2.341-1.776-2.341-1.452-0.993 0.11-0.973 0.11-0.973 1.606 0.113 2.452 1.649 2.452 1.649 1.427 2.446 3.743 1.739 4.656 1.33 0.143-1.034 0.558-1.74 1.016-2.14-3.554-0.404-7.29-1.777-7.29-7.907 0-1.747 0.625-3.174 1.649-4.295-0.166-0.403-0.714-2.030 0.155-4.234 0 0 1.344-0.43 4.401 1.64 1.276-0.355 2.645-0.532 4.005-0.539 1.359 0.006 2.729 0.184 4.008 0.539 3.054-2.070 4.395-1.64 4.395-1.64 0.871 2.204 0.323 3.831 0.157 4.234 1.026 1.12 1.647 2.548 1.647 4.295 0 6.145-3.743 7.498-7.306 7.895 0.574 0.497 1.085 1.47 1.085 2.963 0 2.141-0.019 3.864-0.019 4.391 0 0.426 0.288 0.925 1.099 0.768 6.354-2.118 10.933-8.113 10.933-15.18 0-8.837-7.164-16-16-16z"></path></symbol>
-    </defs>
-  </svg>
-  <!-- .SVG -->
-
-  <!-- Consignes -->
   <link rel="stylesheet" href="css/consignes.css">
   <div class="consignes">
     <h3>Consignes</h3>
@@ -49,16 +31,15 @@
       <li>Cliquer sur la croix à droite du nom de la tâche pour la supprimer</li>
       <li>Et voilà...</li>
     </ol>
-    <button type="button" class="btn btn-consignes"><svg><use xlink:href="#icon-arrow-down2"></use></svg></button>
-
-  </div>  
-  <!-- Content -->
+    <button type="button" class="btn btn-consignes">
+      <span class="icon-arrow-down2"></span>
+    </button>
+  </div>
+  <!-- Consignes : End -->
   <div class="content">
-
     <div class="content__Header">
       <h1>Todo List</h1>
     </div>
-
     <div class="content__body">
       <ul id="todoList"></ul>
       <div id="addListItem">
@@ -69,22 +50,24 @@
         <button type="submit" id="addTask" class="btn">Ajouter</button>
        </div>
     </div>
-
+    <!-- Content: End -->
     <link rel="stylesheet" href="css/footer.css">
     <footer class="container">
       <div span="me">
-        <script type="text/javascript">document.write(new Date().getFullYear());</script>      
-        - <svg width="18" height="13"><use xlink:href="#shape-code"></use></svg> avec <svg width="14" height="13"><use xlink:href="#icon-heart"></use></svg> par <a href="https://cedricbeau.pro/" title="cedricbeau.pro">Cédric Beau</a>
+        <script type="text/javascript">document.write(new Date().getFullYear());</script>
+        - <span class="icon-embed2"></span> avec <span class="icon-heart"></span> par <a href="https://cedricbeau.pro/" title="cedricbeau.pro">Cédric Beau</a>
       </div>
-      <div class="github">      
-        <a href="https://github.com/cedricbeau/TodoList"><svg width="18" height="18"><use xlink:href="#icon-github"></use></svg></a>
+      <div class="github">
+        <a href="https://github.com/cedricbeau/TodoList">
+          <span class="icon-github"></span>
+        </a>
       </div>
     </footer>
     <!-- Footer: End -->
   </div>
-  
+
   <script src="js/consignes.js"></script>
   <script src="js/todo.js"></script>
-  
+
 </body>
 </html>
