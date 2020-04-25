@@ -14,6 +14,10 @@ Simple Todo List with localstorage
 
 ## Mises à jours
 
+**18/04/2020**
+
+* Ajout de la font icon Icomoon
+
 **22/06/2018**
 
 * Ajout des favicons
