@@ -14,6 +14,12 @@ Simple Todo List with localstorage
 
 ## Mises à jours
 
+**06/06/2020**
+
+* Refactorisation du JavaScript
+* Mise à jour de l'UI
+* Sassification du CSS
+
 **18/04/2020**
 
 * Ajout de la font icon Icomoon
