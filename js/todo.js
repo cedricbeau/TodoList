@@ -3,7 +3,6 @@
 /* --------------- Variables: Ready --------------- */
 
 let todoList = document.getElementById('todoList')
-let taskInputs = document.querySelectorAll('.check__task')
 const inputTask = document.getElementById('inputTask')
 const addTask = document.getElementById('addTask')
 const closeAlertBtn = document.getElementById('closeAlert')
@@ -48,8 +47,18 @@ function createTask(){
   newTask.appendChild(labelTask)
   newTask.appendChild(btnRemoveTask)
 
-  // Alerte box
-  alertBox(newTask)
+  // Alerte
+  let alertBox = document.querySelector('.alert-danger')
+  // Supprime l'alerte si existe au moment de l'ajout de la nouvelle tâche
+  alertBox.style.display = 'none'
+  // Si champ vide => alerte
+  if(inputTask.value === '') {
+    alertBox.style.display = 'block'
+  } else {
+    // sinon => ajoute tâche
+    todoList.appendChild(newTask)
+  }
+
   // Associe checkbox et label
   labelForInput()
   // Style reset btn
@@ -73,26 +82,11 @@ inputTask.addEventListener('keydown', function(e){
 // Ajoute une tache en cliquant sur le boutton 'Ajouter'
 addTask.addEventListener('click', createTask, false)
 
-/* --------------- Alerte box: Ready --------------- */
-
-function alertBox(newTask) {
-    // Alerte
-    let alertBox = document.querySelector('.alert-danger')
-    // Supprime l'alerte si existe au moment de l'ajout de la nouvelle tâche
-    alertBox.style.display = 'none'
-    // Si champ vide => alerte
-    if(inputTask.value === '') {
-      alertBox.style.display = 'flex'
-    } else {
-      // sinon => ajoute tâche
-      todoList.appendChild(newTask)
-    }
-}
-
 /* --------------- Associe le label à la checkbox: Ready --------------- */
 
 function labelForInput() {
 
+  let taskInputs = document.querySelectorAll('.check__task')
   let taskLabels = document.querySelectorAll('.item__task')
 
   for(let i = 0; i<taskInputs.length; i++){
@@ -111,14 +105,12 @@ function labelForInput() {
 /* --------------- Add checkmark: Ready --------------- */
 
 function addCheckmark() {
-
+  let taskInputs = document.querySelectorAll('.check__task')
   for(let i = 0; i<taskInputs.length; i++){
     let taskInput = taskInputs[i]
-
     if(taskInput.checked === true) {
       taskInput.nextSibling.innerHTML = '<span class="icon-checkmark"></span>'+taskInput.nextSibling.innerText
     }
-
     if(taskInput.checked === false) {
       taskInput.nextSibling.innerHTML = '<span class="icon-checkmark2"></span>'+taskInput.nextSibling.innerText
     }
@@ -130,9 +122,10 @@ function addCheckmark() {
 // Store checkbox values
 function storeCheck() {
 
+  let taskInputs = document.querySelectorAll('.check__task')
+
   for(let i = 0; i<taskInputs.length; i++){
     let taskInput = taskInputs[i]
-
     taskInput.addEventListener('click', function(){
       if(taskInput.checked === true) {
         localStorage.setItem('task'+i, taskInput.checked)
@@ -154,6 +147,8 @@ function store() {
 // Renvoie la liste et les valeurs des checkbox
 function getValues() {
 
+  // Stock la liste
+  let todoList = document.getElementById('todoList')
   // Stock la clé du localStorage
   let storedValues = window.localStorage.myTodoList
   // Si la clé n'existe pas
@@ -164,6 +159,7 @@ function getValues() {
     todoList.innerHTML = storedValues
   }
 
+  let taskInputs = document.querySelectorAll('.check__task')
   for(let i = 0; i<taskInputs.length; i++){
     // Récupère la valeur de la checkbox
     let checked = localStorage.getItem('task'+i)
@@ -228,27 +224,6 @@ resetBtn.addEventListener('click', clearTodoList, false)
 
 /* --------------- Close Alert: Ready --------------- */
 
-
-
-
-let todoLister = {
-
-  todoList: document.getElementById('todoList'),
-  taskInputs: document.querySelectorAll('.check__task'),
-  inputTask: document.getElementById('inputTask'),
-  addTask: document.getElementById('addTask'),
-  closeAlertBtn: document.getElementById('closeAlert'),
-  resetBtn: document.getElementById('resetTodoList'),
-
-  init: function() {
-    console.log('listen')
-
-
-    // Close alerte
-    this.closeAlertBtn.addEventListener('click', function(){
-      this.parentNode.style.display = 'none'
-    })
-  }
-}
-
-todoLister.init()
+closeAlertBtn.addEventListener('click', function(){
+  this.parentNode.style.display = 'none'
+})

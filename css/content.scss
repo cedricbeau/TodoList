@@ -137,6 +137,10 @@
   &:hover {
     color: var(--btn--backgroundColor--hover);
   }
+
+  [class*="icon-"] {
+    pointer-events: none;
+  }
 }
 
 /* Add List Item */
