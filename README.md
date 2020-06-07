@@ -14,6 +14,10 @@ Simple Todo List with localstorage
 
 ## Mises à jours
 
+**07/06/2020**
+
+* Suppression des consignes
+
 **06/06/2020**
 
 * Refactorisation du JavaScript
