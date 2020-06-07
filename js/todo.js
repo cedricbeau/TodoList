@@ -47,6 +47,18 @@ function createTask(){
   newTask.appendChild(labelTask)
   newTask.appendChild(btnRemoveTask)
 
+  // Alerte
+  let alertBox = document.querySelector('.alert-danger')
+  // Supprime l'alerte si existe au moment de l'ajout de la nouvelle tâche
+  alertBox.style.display = 'none'
+  // Si champ vide => alerte
+  if(inputTask.value === '') {
+    alertBox.style.display = 'flex'
+  } else {
+    // sinon => ajoute tâche
+    todoList.appendChild(newTask)
+  }
+
   // Associe checkbox et label
   labelForInput()
   // Style reset btn
@@ -55,8 +67,6 @@ function createTask(){
   store()
   // Stock l'état de la checkbox localement
   storeCheck()
-  // Affiche une alerte si le champ est vide
-  alertBox(newTask)
 
   // Vide le champ une fois la tâche ajoutée
   inputTask.value = ''
@@ -71,22 +81,6 @@ inputTask.addEventListener('keydown', function(e){
 
 // Ajoute une tache en cliquant sur le boutton 'Ajouter'
 addTask.addEventListener('click', createTask, false)
-
-/* --------------- Affiche une alerte : Ready --------------- */
-
-function alertBox(newTask) {
-  // Alerte
-  let alertBox = document.querySelector('.alert-danger')
-  // Supprime l'alerte si existe au moment de l'ajout de la nouvelle tâche
-  alertBox.style.display = 'none'
-  // Si champ vide => alerte
-  if(inputTask.value === '') {
-    alertBox.style.display = 'flex'
-  } else {
-    // sinon => ajoute tâche
-    todoList.appendChild(newTask)
-  }
-}
 
 /* --------------- Associe le label à la checkbox: Ready --------------- */
 
