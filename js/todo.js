@@ -53,7 +53,7 @@ function createTask(){
   alertBox.style.display = 'none'
   // Si champ vide => alerte
   if(inputTask.value === '') {
-    alertBox.style.display = 'block'
+    alertBox.style.display = 'flex'
   } else {
     // sinon => ajoute tâche
     todoList.appendChild(newTask)
